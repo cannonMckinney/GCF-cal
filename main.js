@@ -27,20 +27,48 @@ function newArray() {
   console.log(array);
 }
 function myTest() {
-  if (array.length <= 2) {
+  if(array.length <= 3) {
+    
     if (array[0][0] == array[1][0] && array[0][4] == array[1][4]) {
       let vars = array[0][1];
       let coe = array[0][0];
       coe /= 2;
       let power = array[0][4];
       power /= 2;
-      if (power.length > 1) {
-      }
       power = "^{" + power;
       power += "}";
       console.log(coe + vars + power);
+      /*
+      if(power.length >= array[0][4]) {
+        vars = array[0][1];
+        coe = array[0][0];
+        let non_whole = array[0][4];
+        non_whole -= 1;
+        non_whole = "^{" + non_whole;
+        non_whole += "}";
+        let sub = "1";
+        sub = "^{" + sub;
+        sub += "}";
+        let sub_coe
+
+        whole_eqa = coe + vars + sub;
+      
+        console.log(coe + vars + non_whole + " + " + whole_eqa);
+
+      }
+      */
+      document.getElementById("return").innerHTML = coe + vars + power;
+
     }
-  } else {
-    document.getElementById("return").innerHTML = "invaild";
+    if(array[0][0] !== array[1][0] && array[0][4] !== array[1][4]) {
+      document.getElementById("return").innerHTML = "no GCF";
+    } 
+    
+
   }
+  if(array.length >= 3){
+    document.getElementById("return").innerHTML = "invaild";
+
+  } 
+   
 }
